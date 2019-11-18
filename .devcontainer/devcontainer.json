@@ -1,0 +1,24 @@
+{
+    "name": "curso-spark2",
+    "context": "..",
+    "dockerFile": "Dockerfile",
+ 
+    // Uncomment the next line if you want to publish any ports.
+    // "appPort": [],
+ 
+    //"postCreateCommand": "umask 002; /bin/bash -l -c \"source activate pyspark; conda develop .; pip install -r requirements.txt\"",
+ 
+    "extensions": [
+        "eamodio.gitlens",
+        "ms-python.python"
+    ],
+    "settings": {
+        "python.linting.pylintEnabled": true,
+        "python.linting.enabled": true
+    },
+    "runArgs": [
+        // $(id -u):$(id -g)
+        "-u", "1000:1000"
+    ],
+    "overrideCommand": false
+}
